@@ -1,3 +1,12 @@
+Metadata-Version: 2.1
+Name: cnnClassifier
+Version: 0.0.0
+Summary: A small python package for CNN app
+Home-page: https://github.com/PratikKujur/melanomaDisease_EndToEndProject
+Author: PratikKujur
+Author-email: pratikkujur121@gmail.com
+Project-URL: Bug Tracker, https://github.com/PratikKujur/melanomaDisease_EndToEndProject/issues
+
 # melanomaDisease_EndToEndProject
 
 
