@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/melanomaDisease_EndToEndProject/mlruns/0/a5f324bd8a66466da9ab5b7941dbc12e/artifacts
+end_time: 1717576754127
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a5f324bd8a66466da9ab5b7941dbc12e
+run_name: enthused-wren-652
+run_uuid: a5f324bd8a66466da9ab5b7941dbc12e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1717576158499
+status: 3
+tags: []
+user_id: Prathik
