@@ -543,3 +543,76 @@ x==========x}
 {2024-06-06 12:14:09,989: INFO: stage_04_model_evaluation: >>>>>> stage Evaluation stage completed <<<<<<
 
 x==========x}
+{2024-06-06 15:13:19,494: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.88.197:8080}
+{2024-06-06 15:13:19,496: INFO: _internal: [33mPress CTRL+C to quit[0m}
+{2024-06-06 15:13:31,390: INFO: _internal: 127.0.0.1 - - [06/Jun/2024 15:13:31] "GET / HTTP/1.1" 200 -}
+{2024-06-06 15:14:00,240: ERROR: app: Exception on /predict [POST]}
+Traceback (most recent call last):
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "d:/melanomaDisease_EndToEndProject/app.py", line 84, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:/melanomaDisease_EndToEndProject/app.py", line 21, in predict
+    model = tf.keras.models.load_model(os.path.join("model", "model.h5"))
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\saving\legacy\save.py", line 230, in load_model
+    raise IOError(
+OSError: No file or directory found at model\model.h5
+{2024-06-06 15:14:00,607: INFO: _internal: 127.0.0.1 - - [06/Jun/2024 15:14:00] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -}
+{2024-06-06 15:16:10,412: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.88.197:8080}
+{2024-06-06 15:16:10,417: INFO: _internal: [33mPress CTRL+C to quit[0m}
+{2024-06-06 15:16:22,664: INFO: _internal: 192.168.88.197 - - [06/Jun/2024 15:16:22] "GET / HTTP/1.1" 200 -}
+{2024-06-06 15:16:36,048: INFO: _internal: 192.168.88.197 - - [06/Jun/2024 15:16:36] "POST /predict HTTP/1.1" 200 -}
+{2024-06-06 15:17:51,738: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.88.197:8080}
+{2024-06-06 15:17:51,874: INFO: _internal: [33mPress CTRL+C to quit[0m}
+{2024-06-06 15:17:58,238: INFO: _internal: 192.168.88.197 - - [06/Jun/2024 15:17:58] "GET / HTTP/1.1" 200 -}
+{2024-06-06 15:18:12,110: ERROR: app: Exception on /predict [POST]}
+Traceback (most recent call last):
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\flask_cors\decorator.py", line 130, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "d:/melanomaDisease_EndToEndProject/app.py", line 84, in predictRoute
+    result = clApp.classifier.predict()
+  File "d:/melanomaDisease_EndToEndProject/app.py", line 21, in predict
+    model = tf.keras.models.load_model('C:/Users/Prathik/model.h5')
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\saving\saving_api.py", line 212, in load_model
+    return legacy_sm_saving_lib.load_model(
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "D:\melanomaDisease_EndToEndProject\.venv\lib\site-packages\keras\engine\base_layer.py", line 870, in from_config
+    raise TypeError(
+TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 224, 224, 3], 'dtype': 'float32', 'sparse': False, 'name': 'input_layer_1'}.
+
+Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+{2024-06-06 15:18:12,391: INFO: _internal: 192.168.88.197 - - [06/Jun/2024 15:18:12] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -}
