@@ -1,7 +1,7 @@
 # melanomaDisease_EndToEndProject
 
 
-# Kidney-Disease-Classification-MLflow-DVC
+# Melanoma-Disease-Classification-MLflow-DVC
 
 
 ## Workflows
@@ -28,7 +28,7 @@ https://github.com/PratikKujur/melanomaDisease_EndToEndProject.git
 ### STEP 01- Create a conda environment after opening the repository
 
 ```bash
-conda create -n cnncls python=3.9 -y
+conda create -n cnncls python=3.8 -y
 ```
 
 ```bash
@@ -74,11 +74,10 @@ Run this to export as env variables:
 
 ```bash
 
-export MLFLOW_TRACKING_URI=
-export MLFLOW_TRACKING_USERNAME=#entbappy 
+export MLFLOW_TRACKING_URI= "https://dagshub.com/pratikkujur121/melanomaDisease_EndToEndProject.mlflow"
+export MLFLOW_TRACKING_USERNAME=pratikkujur121
 
-export #MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
-
+export MLFLOW_TRACKING_PASSWORD=9d6498dc7e43b763c3b9a844e3c0b525b972705f
 ```
 
 

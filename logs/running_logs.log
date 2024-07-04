@@ -624,3 +624,9 @@ Exception encountered: Unrecognized keyword arguments: ['batch_shape']
 {2024-07-04 11:07:54,899: INFO: _internal: 127.0.0.1 - - [04/Jul/2024 11:07:54] "GET / HTTP/1.1" 200 -}
 {2024-07-04 11:08:14,443: INFO: _internal: 127.0.0.1 - - [04/Jul/2024 11:08:14] "POST /predict HTTP/1.1" 200 -}
 {2024-07-04 11:10:34,925: INFO: _internal: 127.0.0.1 - - [04/Jul/2024 11:10:34] "POST /predict HTTP/1.1" 200 -}
+{2024-07-04 11:30:20,908: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://10.53.119.57:8080}
+{2024-07-04 11:30:20,908: INFO: _internal: [33mPress CTRL+C to quit[0m}
+{2024-07-04 11:30:25,220: INFO: _internal: 127.0.0.1 - - [04/Jul/2024 11:30:25] "GET / HTTP/1.1" 200 -}
