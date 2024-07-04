@@ -18,7 +18,7 @@ class PredictionPipeline:
     
     def predict(self):
         # load model
-        model = tf.keras.models.load_model('artifacts/training/model.h5')
+        model = tf.keras.models.load_model('model/model.h5')
 
         imagename = self.filename
         test_image = tf.keras.preprocessing.image.load_img(imagename, target_size = (224,224))
@@ -34,16 +34,6 @@ class PredictionPipeline:
             prediction = 'Benign(Non-Cancerous)'
             return [{ "image" : prediction}]
         
-
-
-
-
-
-
-
-
-
-
 
 
 os.putenv('LANG', 'en_US.UTF-8')
