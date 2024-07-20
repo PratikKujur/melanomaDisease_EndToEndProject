@@ -87,24 +87,6 @@ export MLFLOW_TRACKING_PASSWORD=9d6498dc7e43b763c3b9a844e3c0b525b972705f
 2. dvc repro
 3. dvc dag
 
-
-## About MLflow & DVC
-
-MLflow
-
- - Its Production Grade
- - Trace all of your expriements
- - Logging & taging your model
-
-
-DVC 
-
- - Its very lite weight for POC only
- - lite weight expriements tracker
- - It can perform Orchestration (Creating Pipelines)
-
-
-
 # AWS-CICD-Deployment-with-Github-Actions
 
 ## 1. Login to AWS console.
@@ -138,7 +120,7 @@ DVC
 
 	
 ## 3. Create ECR repo to store/save docker image
-    - Save the URI: 533267373747.dkr.ecr.us-east-1.amazonaws.com/melanoma
+    - Save the URI: 533267******.dkr.ecr.us-east-1.amazonaws.com/melanoma
 
 	
 ## 4. Create EC2 machine (Ubuntu) 
@@ -170,11 +152,11 @@ DVC
 
     AWS_ACCESS_KEY_ID=
 
-    AWS_SECRET_ACCESS_KEY=
+    AWS_SECRET_ACCESS_KEY= 
 
     AWS_REGION = us-east-1
 
-    AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+    AWS_ECR_LOGIN_URI = 533267******.dkr.ecr.us-east-1.amazonaws.com/melanoma
 
-    ECR_REPOSITORY_NAME = simple-app
+    ECR_REPOSITORY_NAME = melanoma
 
