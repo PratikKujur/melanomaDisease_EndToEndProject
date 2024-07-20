@@ -26,7 +26,7 @@ class PredictionPipeline:
         test_image = np.expand_dims(test_image, axis = 0)
         result = np.argmax(model.predict(test_image), axis=1)
         print(result)
-
+        #classification
         if result[0] == 1:
             prediction = 'Malignant(Cancerous)'
             return [{ "image" : prediction}]
