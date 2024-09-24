@@ -160,3 +160,14 @@ export MLFLOW_TRACKING_PASSWORD=9d6498dc7e43b763c3b9a844e3c0b525b972705f
 
     ECR_REPOSITORY_NAME = melanoma
 
+# Demo of the UI (Checking output on test-set) -
+# 1)
+![Screenshot 2024-07-04 110951](https://github.com/user-attachments/assets/3a2d826d-712a-466f-a2e2-48f9d1426918)
+
+# 2)
+![Screenshot 2024-07-04 111047](https://github.com/user-attachments/assets/510c555b-4973-4e1b-ac9b-16a035c8f487)
+
+
+
+
+
