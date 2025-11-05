@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify, render_template
 import os
 from flask_cors import CORS, cross_origin
-from cnnClassifier.utils.common import decodeImage
+# from cnnClassifier.utils.common import decodeImage
 import numpy as np
 import tensorflow as tf
 #from tensorflow.keras.models import load_model
 #from tensorflow.keras.preprocessing import image
 import os
+import streamlit as st
 
 
 
@@ -18,7 +19,9 @@ class PredictionPipeline:
     
     def predict(self):
         # load model
-        model = tf.keras.models.load_model('model/model.h5')
+        model = tf.keras.models.load_model('model/model.h5', compile=False)
+        model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+
 
         imagename = self.filename
         test_image = tf.keras.preprocessing.image.load_img(imagename, target_size = (224,224))
@@ -34,49 +37,63 @@ class PredictionPipeline:
             prediction = 'Benign(Non-Cancerous)'
             return [{ "image" : prediction}]
         
+st.title("Melanoma Detection using CNN")
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+
+if uploaded_file:
+    with open("inputImage.jpg", "wb") as f:
+        f.write(uploaded_file.getbuffer())
+    st.image(uploaded_file, caption='Uploaded Image.', use_column_width=True)
+    st.write("")
+    st.write("Classifying...")
+    classifier = PredictionPipeline("inputImage.jpg")
+    result = classifier.predict()
+    st.success('Done!')
+    st.write(f'Prediction: {result[0]["image"]}')
+else:
+    st.text("Please upload an image file to classify.")
+
+# os.putenv('LANG', 'en_US.UTF-8')
+# os.putenv('LC_ALL', 'en_US.UTF-8')
+
+# app = Flask(__name__)
+# CORS(app)
 
 
-os.putenv('LANG', 'en_US.UTF-8')
-os.putenv('LC_ALL', 'en_US.UTF-8')
-
-app = Flask(__name__)
-CORS(app)
-
-
-class ClientApp:
-    def __init__(self):
-        self.filename = "inputImage.jpg"
-        self.classifier = PredictionPipeline(self.filename)
+# class ClientApp:
+#     def __init__(self):
+#         self.filename = "inputImage.jpg"
+#         self.classifier = PredictionPipeline(self.filename)
 
 
-@app.route("/", methods=['GET'])
-@cross_origin()
-def home():
-    return render_template('index.html')
+# @app.route("/", methods=['GET'])
+# @cross_origin()
+# def home():
+#     return render_template('index.html')
 
 
 
 
-@app.route("/train", methods=['GET','POST'])
-@cross_origin()
-def trainRoute():
-    #os.system("python main.py")
-    os.system("dvc repro")
-    return "Training done successfully!"
+# @app.route("/train", methods=['GET','POST'])
+# @cross_origin()
+# def trainRoute():
+#     #os.system("python main.py")
+#     os.system("dvc repro")
+#     return "Training done successfully!"
 
 
 
-@app.route("/predict", methods=['POST'])
-@cross_origin()
-def predictRoute():
-    image = request.json['image']
-    decodeImage(image, clApp.filename)
-    result = clApp.classifier.predict()
-    return jsonify(result)
+# @app.route("/predict", methods=['POST'])
+# @cross_origin()
+# def predictRoute():
+#     image = request.json['image']
+#     decodeImage(image, clApp.filename)
+#     result = clApp.classifier.predict()
+#     return jsonify(result)
 
 
-if __name__ == "__main__":
-    clApp = ClientApp()
+# if __name__ == "__main__":
+#     clApp = ClientApp()
 
-    app.run(host='0.0.0.0', port=8080) #for AWS
+#     app.run(host='0.0.0.0', port=8080) #for AWS
 
